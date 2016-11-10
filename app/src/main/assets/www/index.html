@@ -1,0 +1,143 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="UTF-8">
+    <title>Liste des citations de donald trump</title>
+    <style type="text/css">
+        .titreApplication
+        {
+        	color:black;
+        	background-color:pink ; 
+        	text-align: center ; 
+        }
+
+        .listeTrump
+        {
+        	padding: 0.5rem ; 
+        	margin-bottom: 0.3rem ; 
+        	text-align: center ; 
+        	list-style-type: none ; 
+        	
+        }
+
+        .lienTrump
+        {
+        	color:green;
+        }
+        .itemTrump:hover
+        {
+        	background-color: purple ; 
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+
+</head>
+<body>
+
+
+problememememmee
+
+    <script type="text/html" id="pageListeTrump">
+    	<h1 class="titreApplication"> Liste de Citation de Donald Trump  </h1>
+    	<ul class="listeTrump" id="listeTrump"> </ul>
+    </script>
+
+    <script type="text/html" id="item-liste-trump">
+         <li class='itemTrump'> 
+             <a class='lienTrump' href='#trump/{ID}'>{NOM}</a>
+        </li>
+    </script>
+
+    <script  type="text/html" id="page-trump">
+    	<h1 id="trump-nom">{NOM}</h1>
+    	<h2 id="trump-citation">{CITATION}</h2>
+    	<p id="trump-commentaire">{COMMENTAIRE}</p>
+        <a href="">RETOUR A LA LISTE</a>
+
+    	<ul id="listeTrump"> </ul>
+    </script>
+
+    <script  src="donnees/TrumpDAO.js"></script>
+
+    <script  src="vue/TrumpVue.js"></script>
+    <script  src="vue/ListeTrumpVue.js"></script>
+
+    <script  src="applicaTrump.js"></script>
+
+
+    <img id="imageDT"src="donnees/trump.jpg" alt="trump" >
+
+
+</body>
+
+</html>
+<!-- 
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Liste des cadeaux</title>
+    <style type="text/css">
+        .titreApplication
+        {
+            color:black;
+            background-color:pink ; 
+            text-align: center ; 
+        }
+
+        .listeCadeau
+        {
+            padding: 0.5rem ; 
+            margin-bottom: 0.3rem ; 
+            text-align: center ; 
+            list-style-type: none ; 
+            
+        }
+
+        .lienCadeau
+        {
+            color:green;
+        }
+        .itemCadeau:hover
+        {
+            background-color: purple ; 
+        }
+
+    </style>
+    <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+
+</head>
+<body>
+
+
+problememememmee
+
+<script id="pageListeCadeau">
+    <h1 class="titreApplication"> Liste de noel </h1>
+    <ul class="listeCadeau" id="listeCadeau"> </ul>
+</script>
+
+<script id="page-cadeau">
+    <h1 id="cadeau-nom">{NOM}</h1>
+    <h2 id="cadeau-marque">{MARQUE}</h2>
+    <p id="cadeau-description">{DESCRIPTION}</p>
+
+    <ul id="listeCadeau"> </ul>
+</script>
+
+<script  src="donnees/CadeauDAO.js"></script>
+
+<script  src="vue/CadeauVue.js"></script>
+<script  src="vue/ListeCadeauxVue.js"></script>
+
+<script  src="application.js"></script>
+
+
+</body>
+
+</html>
+
+ <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script> -->
+<!-- <script src="action/application.js"></script>-->
+
+	
