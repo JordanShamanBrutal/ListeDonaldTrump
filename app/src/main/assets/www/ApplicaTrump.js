@@ -16,7 +16,12 @@ var applicationTrump = {
 			this.listeTrumpVue = new ListeTrumpVue(this.listeTrump); 
 
 			this.listeTrumpVue.afficher(); 
-		}else{
+		}else if (ancre.match(/^#page-ajouter-trump/)){
+			this.ajouterTrumpVue = new AjouterTrumpVue();
+			this.ajouterTrumpVue.afficher();
+		}
+
+		else{
 			var trouvailles = ancre.match(/^#trump\/([0-9]+)/); 
 
 			var id_trump = trouvailles[1]; 

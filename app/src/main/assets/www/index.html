@@ -41,6 +41,7 @@ problememememmee
     <script type="text/html" id="pageListeTrump">
     	<h1 class="titreApplication"> Liste de Citation de Donald Trump  </h1>
     	<ul class="listeTrump" id="listeTrump"> </ul>
+        <a href="#page-ajouter-trump"> <img id="imageDT"src="donnees/trump.jpg" alt="trump" > </a>
     </script>
 
     <script type="text/html" id="item-liste-trump">
@@ -53,20 +54,39 @@ problememememmee
     	<h1 id="trump-nom">{NOM}</h1>
     	<h2 id="trump-citation">{CITATION}</h2>
     	<p id="trump-commentaire">{COMMENTAIRE}</p>
-        <a href="">RETOUR A LA LISTE</a>
+        <a href="#">RETOUR A LA LISTE</a>
 
     	<ul id="listeTrump"> </ul>
     </script>
 
-    <script  src="donnees/TrumpDAO.js"></script>
 
+<!-- ALLLOW ceci est pour ajoutai une citation de donald -->
+    <script  type="text/html" id="page-ajouter-trump">
+        <form>
+            <label for="trump-nom">Nom</label>
+            <input type="text" name="trump-nom"/>
+
+            <label for="trump-citation">Citation</label>
+            <input type="text" name="trump-citation"/>
+
+            <label for="trump-commentaire">Commentaire</label>
+            <textareaid id="trump-commentaire"></textarea>
+
+            <input type="submit" name="AJOUTAIIIII">
+        </form>
+
+        <a href="#">RETOUR A LA LISTE</a>
+    </script>
+
+    <script  src="donnees/TrumpDAO.js"></script>
+    <script  src="vue/AjouterTrumpVue.js"></script>
     <script  src="vue/TrumpVue.js"></script>
     <script  src="vue/ListeTrumpVue.js"></script>
 
     <script  src="applicaTrump.js"></script>
 
 
-    <img id="imageDT"src="donnees/trump.jpg" alt="trump" >
+    
 
 
 </body>
