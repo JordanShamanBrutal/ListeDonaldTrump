@@ -5,90 +5,36 @@ var TrumpDAO = function(){
 
 	this.initialiser = function()
 	{
-		var SQL_CREATION = "CREATE TABLE IF NOT EXISTS trump(id INTEGER PRIMARY KEY AUTOINCREMENT , nom VARCHAR(50) , citation TEXT , commentaire TEXT )" ; 
-		this.baseDeDonnees = window.openDatabase("listeTrump" , "1.0" , "Liste citation de Trump " , 200000) ; 
-
-		this.baseDeDonnees.transaction(
-			function(operation){
-				var SQL_CREATION = "CREATE TABLE IF NOT EXISTS trump(id INTEGER PRIMARY KEY AUTOINCREMENT , nom VARCHAR(50) , citation TEXT , commentaire TEXT )";
-				operation.executeSql(SQL_CREATION) ; 
-			},
-			this.reagirErreur , 
-			this.reagirSucces
-			);
+		if (!this.listeTrump) {this.listeTrump = new Array(); }
 	}
 
 
 	this.ajouterTrump = function(trump)
 	{
+		if (this.listeTrump.length > 0 ) {
+			trump.id = this.listeTrump[this.listeTrump.length-1].id + 1 
+		} else {
+			cadeau.id = 1 ; 
+		}
 
-	this.baseDeDonnees.transaction(
-		function(operation)
-		{	
-			var SQL_AJOUT = "INSERT INTO trump (nom,citation,commentaire ) VALUES(?,?,?)" ; 
-			var parametres = [trump.nom , trump.citation ,trump.commentaire] ; 
-			operation.executeSql(SQL_AJOUT , parametres) ; 
-		} , 
-		this.reagirErreur,
-		this.reagirSucces
-		);
+		this.listeTrump[trump.id] = trump 
+		localStorage['trump'] = JSON.stringify(this.listeTrump) ; 
 	}
-
-	this.updateTrump = function(trump)
-	{
-
-	this.baseDeDonnees.transaction(
-		function(operation)
-		{	
-			
-			var SQL_UPDATE = " UPDATE trump SET nom = ?, citation = ? , commentaire = ? WHERE id = ? ;" ; 
-			var parametres = [trump.nom , trump.citation ,trump.commentaire , trump.id ] ; 
-			operation.executeSql(SQL_UPDATE , parametres) ; 
-		} , 
-		this.reagirErreur,
-		this.reagirSucces
-		);
-	}
-
 
 
 	this.listerTousLesTrump = function(finalisation)
 	{
-		this.baseDeDonnees.transaction(
-			//operation 
-			$.proxy(
-			function(operation)
-			{
-				var SQL_SELECTION = "SELECT * FROM trump " ; 
-				operation.executeSql(SQL_SELECTION , [] , $.proxy(
-						function(operation , resultat){
-						this.listeTrump = [] ; 
-						for (var position = 0 ;  position <resultat.rows.length; position++) {
-
-
-							var enregistrementTrump = resultat.rows.item(position) ; 
-
-							var trump = new Trump(
-								enregistrementTrump.id , 
-								enregistrementTrump.nom , 
-								enregistrementTrump.citation , 
-								enregistrementTrump.commentaire  
-
-								)
-							this.listeTrump[this.listeTrump.length] = trump;
-
-						}
-
-					},this));}, this), 
-			//erreur
-			this.reagirErreur , 
-
-			//succes
-			$.proxy(
-			function(){
-				finalisation(this.listeTrump) ; 
-			} , this) )  ; 
+		if (!this.listeTrump && localStorage['cadeau']) {
+			this.listeTrump = JSON.parse(localStorage['cadeau']) ; 
+				}
+		for (position in this.listeTrump) {
+			var trump = this.listeTrump[position]; 
+			if(trump) alert(this.listeTrump[position] + " " + trump.nom) ; 
+		}
+		return this.listeTrump ;
 	}
+
+	this.initialiser() ;
 
 
 	/*
@@ -112,7 +58,7 @@ var TrumpDAO = function(){
 		//alert("SUCCES:SQL");
 	}
 
-	this.initialiser() ;
+	
 
 
 	

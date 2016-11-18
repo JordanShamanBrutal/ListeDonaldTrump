@@ -15,8 +15,6 @@ var ListeTrumpVue = function (liste_trump) {
 
 			htmlEnConstruction += ListeTrumpVue.html_item.replace("{ID}",liste_trump[i].id).replace("{NOM}", liste_trump[i].nom) ; 
 		}
-
-
 		html_liste_trump.html(htmlEnConstruction);
 	}
 }

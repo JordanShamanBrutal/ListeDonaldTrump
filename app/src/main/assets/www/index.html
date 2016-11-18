@@ -55,31 +55,52 @@ problememememmee
     	<h2 id="trump-citation">{CITATION}</h2>
     	<p id="trump-commentaire">{COMMENTAIRE}</p>
         <a href="#">RETOUR A LA LISTE</a>
-
+        <a class='lienTrumpModifier' href='#trump/{ID}/#page-modifier-trump'>Modifier</a>
     	<ul id="listeTrump"> </ul>
     </script>
 
 
+
 <!-- ALLLOW ceci est pour ajoutai une citation de donald -->
     <script  type="text/html" id="page-ajouter-trump">
-        <form>
+        <form id="formulaire-ajouter">
             <label for="trump-nom">Nom</label>
-            <input type="text" name="trump-nom"/>
+            <input type="text" id="trump-nom"/>
 
             <label for="trump-citation">Citation</label>
-            <input type="text" name="trump-citation"/>
+            <input type="text" id="trump-citation"/>
 
             <label for="trump-commentaire">Commentaire</label>
-            <textareaid id="trump-commentaire"></textarea>
+            <textarea id="trump-commentaire"></textarea>
 
-            <input type="submit" name="AJOUTAIIIII">
+            <input type="submit" name="ajouter">
         </form>
 
         <a href="#">RETOUR A LA LISTE</a>
     </script>
 
+    <!-- ALLLOW ceci est pour modifiaaaa une citation de donald -->
+    <script  type="text/html" id="page-modifier-trump">
+        <form id="formulaire-modifier">
+            <label for="trump-nom">Nom</label>
+            <input type="text" id="trump-nom"/>
+
+            <label for="trump-citation">Citation</label>
+            <input type="text" id="trump-citation"/>
+
+            <label for="trump-commentaire">Commentaire</label>
+            <textarea id="trump-commentaire"></textarea>
+
+            <input type="submit" name="ajouter">
+        </form>
+
+        <a href="#">RETOUR A LA LISTE</a>
+    </script>
+
+    <script  src="model/Trump.js"></script>
     <script  src="donnees/TrumpDAO.js"></script>
     <script  src="vue/AjouterTrumpVue.js"></script>
+    <script  src="vue/ModifierTrumpVue.js"></script>
     <script  src="vue/TrumpVue.js"></script>
     <script  src="vue/ListeTrumpVue.js"></script>
 
@@ -102,7 +123,7 @@ problememememmee
         {
             color:black;
             background-color:pink ; 
-            text-align: center ; 
+            text-sign: center ; 
         }
 
         .listeCadeau
