@@ -4,10 +4,20 @@
 <meta charset="UTF-8">
     <title>Liste des citations de donald trump</title>
     <style type="text/css">
+
+    body{
+    	background-color: #EDC87E
+    }
+    input{
+        	display: block;
+        }
+        textarea{
+        	display: block;
+        }
         .titreApplication
         {
         	color:black;
-        	background-color:pink ; 
+        	background-color:#C18101 ; 
         	text-align: center ; 
         }
 
@@ -16,21 +26,45 @@
         	padding: 0.5rem ; 
         	margin-bottom: 0.3rem ; 
         	text-align: center ; 
-        	list-style-type: none ; 
+        	list-style-type: none ;
         	
+        	
+        }
+        .lienTrumpModifier{
+        	color: #A21E1E ; 
+        	text-align: right;
         }
 
         .lienTrump
         {
-        	color:green;
+        	color:#A21E1E;
         }
         .itemTrump:hover
         {
-        	background-color: purple ; 
+        	background-color: #DBBC86 ; 
         }
+        .nomListeVue{
+        	text-align: center ; 
+        }
+        .citationListeVue{
+        	text-align: center ;
+        }
+        .commentaireListeVue{
+        	text-align: center ;
+        	font-style: italic; 
+        }
+        .lienTrumpRetour{
+        	color:#A21E1E;
+        }
+        
 
     </style>
+
+
+<script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>
+    
     <script type="text/javascript" charset="utf-8" src="lib/jquery.js"></script>
+
 
 </head>
 <body>
@@ -41,7 +75,7 @@ problememememmee
     <script type="text/html" id="pageListeTrump">
     	<h1 class="titreApplication"> Liste de Citation de Donald Trump  </h1>
     	<ul class="listeTrump" id="listeTrump"> </ul>
-        <a href="#page-ajouter-trump"> <img id="imageDT"src="donnees/trump.jpg" alt="trump" > </a>
+        <a class="imageTrump" href="#page-ajouter-trump"> <img  id="imageDT"src="donnees/trump.jpg" alt="trump" > </a>
     </script>
 
     <script type="text/html" id="item-liste-trump">
@@ -51,32 +85,32 @@ problememememmee
     </script>
 
     <script  type="text/html" id="page-trump">
-    	<h1 id="trump-nom">{NOM}</h1>
-    	<h2 id="trump-citation">{CITATION}</h2>
-    	<p id="trump-commentaire">{COMMENTAIRE}</p>
-        <a href="#">RETOUR A LA LISTE</a>
+    	<h1 class="nomListeVue"id="trump-nom">{NOM}</h1>
+    	<h2 class="citationListeVue" id="trump-citation">{CITATION}</h2>
+    	<p class="commentaireListeVue" id="trump-commentaire">{COMMENTAIRE}</p>
+        <a class='lienTrumpRetour' href="#">RETOUR A LA LISTE</a>
         <a class='lienTrumpModifier' href='#trump/{ID}/#page-modifier-trump'>Modifier</a>
     	<ul id="listeTrump"> </ul>
     </script>
 
 
 
-<!-- ALLLOW ceci est pour ajoutai une citation de donald -->
+<!-- ALLLOW ceci est pour ajoutai une citation de donald   <script type="text/javascript" charset="utf-8" src="lib/cordova.js"></script>  -->
     <script  type="text/html" id="page-ajouter-trump">
         <form id="formulaire-ajouter">
-            <label for="trump-nom">Nom</label>
-            <input type="text" id="trump-nom"/>
+            <label  for="trump-nom">Nom</label>
+            <input class="inputNom" type="text" id="trump-nom"/>
 
             <label for="trump-citation">Citation</label>
-            <input type="text" id="trump-citation"/>
+            <input class="inputCitation" type="text" id="trump-citation"/>
 
             <label for="trump-commentaire">Commentaire</label>
-            <textarea id="trump-commentaire"></textarea>
+            <textarea class="inputCommentaire" id="trump-commentaire"></textarea>
 
             <input type="submit" name="ajouter">
         </form>
 
-        <a href="#">RETOUR A LA LISTE</a>
+        <a class='lienTrumpRetour' href="#">RETOUR A LA LISTE</a>
     </script>
 
     <!-- ALLLOW ceci est pour modifiaaaa une citation de donald -->
@@ -104,7 +138,7 @@ problememememmee
     <script  src="vue/TrumpVue.js"></script>
     <script  src="vue/ListeTrumpVue.js"></script>
 
-    <script  src="applicaTrump.js"></script>
+    <script  src="ApplicaTrump.js"></script>
 
 
     

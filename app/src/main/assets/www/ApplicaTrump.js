@@ -1,15 +1,13 @@
 //objet anonyme 
 var applicationTrump = {
 	lancer:function(){
- 		this.trumpDAO = new TrumpDAO() ; 
 		//proxy permet que le this courant sois utiliser dans le on 
 		$(window).on('hashchange',$.proxy(this.naviguer , this));
 		//this.naviguer();	
 		if (navigator.userAgent.match(/(iPhone|iPod|iPad|Android|BlackBerry)/)) {
 			$(document).on('deviceready' , $.proxy(this.initialisePourDonnee , this )) ; 
 		} else {
-			this.trumpDAO = new TrumpDAO ; 
-			this.naviguer() ; 
+			this.initialisePourDonnee(); 
 		}
 	},
 
